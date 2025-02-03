@@ -65,6 +65,11 @@ public class OrderItem implements Serializable{
 		id.setProduct(product);
 	}
 	
+	// Método que implementa o sub-total
+	public Double getSubTotal() {
+		return price * quantity;
+	}
+	
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);

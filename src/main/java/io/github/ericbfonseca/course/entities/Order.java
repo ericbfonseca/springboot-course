@@ -96,6 +96,15 @@ public class Order implements Serializable{
 		this.payment = payment;
 	}
 	
+	// Método que calcula o valor total de um pedido
+	public Double getTotal() {
+		double sum = 0.0;
+		for (OrderItem x : items) {
+			sum += x.getSubTotal();
+		}
+		return sum;
+	}
+	
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
